@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fakestoreapi.api", "fakestoreapi.api\fakestoreapi.api.csproj", "{51A7E7B2-D915-401A-BD04-F302CD8FA218}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fakestoreapi.domain", "fakestoreapi.domain\fakestoreapi.domain.csproj", "{E0C32F37-E403-478F-8F9C-3871EC53E1C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fakestoreapi.application", "fakestoreapi.application\fakestoreapi.application.csproj", "{B2FD171C-9A85-4465-8C09-A446E0B5E601}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fakestoreapi.infrastructure", "fakestoreapi.infrastructure\fakestoreapi.infrastructure.csproj", "{5CAD0AB7-A029-4315-B90E-80FC7E7F139A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{28D23B33-9DFB-4B5B-A914-C4167F382A90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fakestoreapi.rabidmq", "fakestoreapi.rabidmq\fakestoreapi.rabidmq.csproj", "{9CC09498-0BC5-4528-AFF8-98A170ABB157}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51A7E7B2-D915-401A-BD04-F302CD8FA218}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A7E7B2-D915-401A-BD04-F302CD8FA218}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A7E7B2-D915-401A-BD04-F302CD8FA218}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A7E7B2-D915-401A-BD04-F302CD8FA218}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C32F37-E403-478F-8F9C-3871EC53E1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C32F37-E403-478F-8F9C-3871EC53E1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C32F37-E403-478F-8F9C-3871EC53E1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C32F37-E403-478F-8F9C-3871EC53E1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2FD171C-9A85-4465-8C09-A446E0B5E601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2FD171C-9A85-4465-8C09-A446E0B5E601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2FD171C-9A85-4465-8C09-A446E0B5E601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2FD171C-9A85-4465-8C09-A446E0B5E601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CAD0AB7-A029-4315-B90E-80FC7E7F139A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CAD0AB7-A029-4315-B90E-80FC7E7F139A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CAD0AB7-A029-4315-B90E-80FC7E7F139A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CAD0AB7-A029-4315-B90E-80FC7E7F139A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D23B33-9DFB-4B5B-A914-C4167F382A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D23B33-9DFB-4B5B-A914-C4167F382A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D23B33-9DFB-4B5B-A914-C4167F382A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D23B33-9DFB-4B5B-A914-C4167F382A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CC09498-0BC5-4528-AFF8-98A170ABB157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CC09498-0BC5-4528-AFF8-98A170ABB157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CC09498-0BC5-4528-AFF8-98A170ABB157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CC09498-0BC5-4528-AFF8-98A170ABB157}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D46D7F3-7793-4238-AA7C-383CB270A45D}
+	EndGlobalSection
+EndGlobal
