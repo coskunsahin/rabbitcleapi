@@ -25,8 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\fakestoreapi.api\fakestoreapi.api.csproj" />
-    <ProjectReference Include="..\fakestoreapi.application\fakestoreapi.application.csproj" />
-    <ProjectReference Include="..\fakestoreapi.domain\fakestoreapi.domain.csproj" />
   </ItemGroup>
 
 </Project>
