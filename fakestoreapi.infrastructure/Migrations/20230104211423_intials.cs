@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace fakestoreapi.infrastructure.Migrations
 {
-    public partial class intial : Migration
+    public partial class intials : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

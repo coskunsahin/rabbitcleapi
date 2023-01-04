@@ -1,4 +1,5 @@
 ﻿using fakestoreapi.domain.Common;
+using fakestoreapi.domain.Entities.Domain.Entities;
 using fakestoreapi.domain.Enums;
 using System;
 using System.Collections.Generic;
