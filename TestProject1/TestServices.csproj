@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentAssertions.Json" Version="6.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
@@ -23,6 +24,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\fakestoreapi.api\fakestoreapi.api.csproj" />
+    <ProjectReference Include="..\fakestoreapi.application\fakestoreapi.application.csproj" />
     <ProjectReference Include="..\fakestoreapi.domain\fakestoreapi.domain.csproj" />
   </ItemGroup>
 
