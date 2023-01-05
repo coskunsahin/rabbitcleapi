@@ -1,6 +1,6 @@
 ﻿
 using fakestoreapi.application.Queries;
-using fakestoreapi.domain.Entities.Domain.Entities;
+using fakestoreapi.domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
