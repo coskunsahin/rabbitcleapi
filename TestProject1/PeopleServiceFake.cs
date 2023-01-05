@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace TestServices
 {
     
-    public class PeopleServiceFake : GetAllPeopleQuery
+    public class PeopleServiceFake : I
     {
         private readonly List<People> _people;
 
@@ -33,24 +33,24 @@ namespace TestServices
         //}
 
         //public ShoppingItem Add(ShoppingItem newItem)
-        {
-            newItem.Id = Guid.NewGuid();
-            _shoppingCart.Add(newItem);
-            return newItem;
-        }
+//        {
+//            newItem.Id = Guid.NewGuid();
+//            _shoppingCart.Add(newItem);
+//            return newItem;
+//        }
 
-        public ShoppingItem GetById(Guid id)
-        {
-            return _shoppingCart.Where(a => a.Id == id)
-                .FirstOrDefault();
-        }
+//        public ShoppingItem GetById(Guid id)
+//        {
+//            return _shoppingCart.Where(a => a.Id == id)
+//                .FirstOrDefault();
+//        }
 
-        public void Remove(Guid id)
-        {
-            var existing = _shoppingCart.First(a => a.Id == id);
-            _shoppingCart.Remove(existing);
-        }
-    }
-}
+//        public void Remove(Guid id)
+//        {
+//            var existing = _shoppingCart.First(a => a.Id == id);
+//            _shoppingCart.Remove(existing);
+//        }
+//    }
+//}
 
 

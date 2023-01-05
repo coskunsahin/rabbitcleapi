@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace TestServices.Service
 {
    
-    public class PeopleService : IPeopleServiceFAKE
+    public class PeopleService : IPeopleService
     {
         public People Add(People newPeople) => throw new NotImplementedException();
 
