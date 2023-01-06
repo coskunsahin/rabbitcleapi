@@ -5,6 +5,8 @@
 https://www.rabbitmq.com/
 https://www.erlang.org/
 https://www.postgresql.org/
+test ıcın
+https://marketplace.visualstudio.com/items?itemName=FortuneNgwenya.FineCodeCoverage
 
 postgres 
 kullanıcı sifre  
