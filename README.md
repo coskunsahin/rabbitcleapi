@@ -32,7 +32,7 @@ sonra
 set startup 
 console1 secilir 
 api  secilir
-start yapılır
+start yapılır.
 sonra swagger  sayfası cıkar karsınıza get  istekler  cagrında   hepsi  console   ekranda gorulur
 https://localhost:5001/swagger/index.html
 
