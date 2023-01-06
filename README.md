@@ -36,4 +36,9 @@ start yapılır.
 sonra swagger  sayfası cıkar karsınıza get  istekler  cagrında   hepsi  console   ekranda gorulur
 https://localhost:5001/swagger/index.html
 
+# Cleanarticle  kaynaklar
+https://ardalis.com/
+https://www.postgresql.org/
+https://jasontaylor.dev/clean-architecture-getting-started/
+https://learn.microsoft.com/en-us/dotnet/architecture/microservices/
 
