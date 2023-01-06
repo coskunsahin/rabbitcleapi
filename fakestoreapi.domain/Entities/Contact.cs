@@ -1,5 +1,5 @@
 ﻿
-using fakestoreapi.domain.Entities.Domain.Entities;
+using fakestoreapi.domain.Entities;
 using fakestoreapi.domain.Common;
 
 using System;

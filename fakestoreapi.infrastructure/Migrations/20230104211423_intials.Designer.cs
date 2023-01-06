@@ -12,8 +12,8 @@ using fakestoreapi.infrastructure.Data;
 namespace fakestoreapi.infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221229202518_intial")]
-    partial class intial
+    [Migration("20230104211423_intials")]
+    partial class intials
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
