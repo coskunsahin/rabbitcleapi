@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 using fakestoreapi.api.Services;
 using fakestoreapi.rabbit;
-using fakestoreapi.application.Handler;
-using System;
 
+using System;
+using fakestoreapi.application.Delete;
 
 namespace fakestoreapi.api.Controllers
 {
@@ -23,7 +23,7 @@ namespace fakestoreapi.api.Controllers
     public class PeopleController : ApiController
     {
         private readonly ICurrentUserService _currentUserService;
-      //  private readonly IRabitMQProducer _rabitMQProducer;
+      
         public PeopleController(ICurrentUserService currentUserService)
         {
             _currentUserService = currentUserService;
