@@ -2,14 +2,7 @@
 using fakestoreapi.application.Common.Interfaces;
 using fakestoreapi.domain.Common;
 using fakestoreapi.domain.Entities;
-
-
-using fakestoreapi.domain.Entities;
-
-using fakestoreapi.domain.Entities.Domain.Entities;
-
 using fakestoreapi.infrastructure.Models;
-
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;

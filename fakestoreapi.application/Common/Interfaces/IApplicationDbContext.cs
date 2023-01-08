@@ -8,7 +8,6 @@ using fakestoreapi.domain.Entities;
 
 
 
-using fakestoreapi.domain.Entities.Domain.Entities;
 
 
 namespace fakestoreapi.application.Common.Interfaces

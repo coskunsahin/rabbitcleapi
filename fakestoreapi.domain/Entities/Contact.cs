@@ -1,10 +1,6 @@
 
 using fakestoreapi.domain.Entities;
-=======
-using fakestoreapi.domain.Entities.Domain.Entities;
-
 using fakestoreapi.domain.Common;
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
