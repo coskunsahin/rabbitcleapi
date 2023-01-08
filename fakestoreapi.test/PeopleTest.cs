@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fakestoreapi.test;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -6,91 +7,89 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace TestServices.Test
-{
-    internal class PeopleTest
-    {
-    }
 
-    internal record Product(int productId, string productName);
-    public class ProductTest : IDisposable
+namespace fakestoreapi.test
+{
+
+    internal record People(int? PeopleID, string? Name, string? Lastname, string? Company, int? Phone, long? Location);
+    public class PeopleTest : IDisposable
     {
         private readonly HttpClient _httpClient = new()
         {
-            BaseAddress = new Uri("https://localhost:7202/api/Product")
+            BaseAddress = new Uri("https://localhost:5001/api")
         };
 
         public void Dispose()
         {
-            _httpClient.DeleteAsync("/deleteproduct?Id=1").GetAwaiter().GetResult();
+            _httpClient.DeleteAsync("/").GetAwaiter().GetResult();
         }
 
         [Fact]
-        public async Task GivenARequest_WhenCallingGetProduct_ThenTheAPIReturnsExpectedResponse()
+        public async Task GivenARequest_WhenCallingGetPeople_ThenTheAPIReturnsExpectedResponse()
         {
             // Arrange.
             var expectedStatusCode = System.Net.HttpStatusCode.OK;
             var expectedContent = new[]
             {
-            new Product(1, "Araba #1"),
-            new Product(2, "Araba #2"),
-            new Product(3, "Araba  #3"),
-            new Product(4, "Araba  #4"),
-            new Product(5, "Araba #5")
+            new People(1, "COSKUN","SAHIN","THY",744445,10),
+                   new People(2, "COSKUN","SAHIN","THY",744445,10),
+                             new People(3, "COSKUN","SAHIN","THY",744445,10),
+                                       new People(4, "COSKUN","SAHIN","THY",744445,10)
+
         };
             var stopwatch = Stopwatch.StartNew();
 
             // Act.
-            var response = await _httpClient.GetAsync("/productlist");
+            var response = await _httpClient.GetAsync("/people");
 
             // Assert.
             await TestHelpers.AssertResponseWithContentAsync(stopwatch, response, expectedStatusCode, expectedContent);
         }
 
         [Fact]
-        public async Task GivenARequest_WhenCallingPostProduct_ThenTheAPIReturnsExpectedResponseAndAddsBook()
+        public async Task GivenARequest_WhenCallingPostPeople_ThenTheAPIReturnsExpectedResponseAndAddsBook()
         {
             // Arrange.
             var expectedStatusCode = System.Net.HttpStatusCode.Created;
-            var expectedContent = new Product(6, "product");
+            var expectedContent = new People(6, "COSKUN", "SAHIN", "THY", 744445, 10);
             var stopwatch = Stopwatch.StartNew();
 
             // Act.
-            var response = await _httpClient.PostAsync("/addproduct", TestHelpers.GetJsonStringContent(expectedContent));
+            var response = await _httpClient.PostAsync("/people", TestHelpers.GetJsonStringContent(expectedContent));
 
             // Assert.
             await TestHelpers.AssertResponseWithContentAsync(stopwatch, response, expectedStatusCode, expectedContent);
         }
 
         [Fact]
-        public async Task GivenARequest_WhenCallingPutProduct_ThenTheAPIReturnsExpectedResponseAndUpdatesBook()
+        public async Task GivenARequest_WhenCallingPutPeople_ThenTheAPIReturnsExpectedResponseAndUpdatesBook()
         {
             // Arrange.
             var expectedStatusCode = System.Net.HttpStatusCode.NoContent;
-            var updateproduct = new Product(6, "Awesome book #6 - Updated");
+            var updateproduct = new People(5, "COSKUN", "SAHIN", "THY", 744445, 10);
             var stopwatch = Stopwatch.StartNew();
 
             // Act.
-            var response = await _httpClient.PutAsync("/updateproduct", TestHelpers.GetJsonStringContent(updateproduct));
+            var response = await _httpClient.PutAsync("/people", TestHelpers.GetJsonStringContent(updateproduct));
 
             // Assert.
             //TestHelpers.AssertCommonResponseParts(stopwatch, response, expectedStatusCode);
         }
 
-        //[Fact]
-        //public async Task GivenARequest_WhenCallingDeleteProduct_ThenTheAPIReturnsExpectedResponseAndDeletesBook()
-        //{
-        //    // Arrange.
-        //    var expectedStatusCode = System.Net.HttpStatusCode.NoContent;
-        //    var bookIdToDelete = 1;
-        //    var stopwatch = Stopwatch.StartNew();
+        [Fact]
+        public async Task GivenARequest_WhenCallingDeletePeople_ThenTheAPIReturnsExpectedResponseAndDeletesBook()
+        {
+            // Arrange.
+            var expectedStatusCode = System.Net.HttpStatusCode.NoContent;
+            var peopleIdToDelete = 10;
+            var stopwatch = Stopwatch.StartNew();
 
-        //    // Act.
-        //    var response = await _httpClient.DeleteAsync($"/deleteproduct?Id=1");
+            // Act.
+            var response = await _httpClient.DeleteAsync($"/people/10");
 
-        //    // Assert.
-        //    TestHelpers.AssertCommonResponseParts(stopwatch, response, expectedStatusCode);
-        //}
+            // Assert.
+            TestHelpers.AssertCommonResponseParts(stopwatch, response, expectedStatusCode);
+        }
 
         [Fact]
         public async Task GivenAnAuthenticatedRequest_WhenCallingAdmin_ThenTheAPIReturnsExpectedResponse()
@@ -114,7 +113,7 @@ namespace TestServices.Test
         [InlineData("")]
         [InlineData(" ")]
         [InlineData("WrongApiKey")]
-        public async Task GivenAnUnauthenticatedRequest_WhenCallingAdmin_ThenTheAPIReturnsUnauthorized(string apiKey)
+        public async Task GivenAnUnauthenticatedRequest_WhenCallingAdmin_ThenTheAPIReturnsUnauthorized(string? apiKey)
         {
             // Arrange.
             var expectedStatusCode = System.Net.HttpStatusCode.Unauthorized;

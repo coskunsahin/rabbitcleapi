@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace TestServices.Test
+namespace fakestoreapi.test
 {
     public static class TestHelpers
     {
@@ -35,4 +35,3 @@ namespace TestServices.Test
             => new(JsonSerializer.Serialize(model), Encoding.UTF8, _jsonMediaType);
     }
 }
-
