@@ -11,7 +11,12 @@ using System.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 using fakestoreapi.rabbit;
+
+
+using fakestoreapi.domain.Entities;
+=======
 using fakestoreapi.domain.Entities.Domain.Entities;
+
 
 namespace fakestoreapi.application.Handlers
 {

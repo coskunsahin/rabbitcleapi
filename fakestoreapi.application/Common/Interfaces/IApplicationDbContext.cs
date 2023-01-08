@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using fakestoreapi.domain.Entities;
+
+
+
 using fakestoreapi.domain.Entities.Domain.Entities;
+
 
 namespace fakestoreapi.application.Common.Interfaces
 {

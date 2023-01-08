@@ -1,5 +1,4 @@
 ﻿using fakestoreapi.application.Common.Interfaces;
-using fakestoreapi.application.Queries;
 using fakestoreapi.application.ViewModels.Application.Invoices.ViewModels;
 using fakestoreapi.application.ViewModels;
 using MediatR;
@@ -10,54 +9,42 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.Design;
-
-
-using fakestoreapi.domain.Entities;
-
-
-
-
-using fakestoreapi.domain.Entities.Domain.Entities;
-
 using fakestoreapi.rabbit;
 
-namespace fakestoreapi.application.Handlers
+namespace fakestoreapi.application.Queries
 {
-    public class GetSistemQueryHandler : IRequestHandler<GetSistemQuery, IList<PeopleVM>>
+    public class GetSistem : IRequestHandler<GetUserPeopleQuery, IList<PeopleVM>>
     {
-        private readonly IRabitMQProducer _rabitMQProducer;
 
 
         private readonly IApplicationDbContext _context;
 
+        private readonly IRabitMQProducer _rabitMQProducer;
 
-        public GetSistemQueryHandler(IApplicationDbContext context, IRabitMQProducer rabitMQProducer)
+        public GetSistem(IApplicationDbContext context,IRabitMQProducer rabitMQProducer)
         {
             _context = context;
             _rabitMQProducer= rabitMQProducer;
         }
 
-        public long lon { get;  set; }
-
-        public async Task<IList<PeopleVM>> Handle(GetSistemQuery request, CancellationToken cancellationToken)
+        public async Task<IList<PeopleVM>> Handle(GetUserPeopleQuery request, CancellationToken cancellationToken)
         {
-            
+           
 
             var peoplet = await _context.Peoples.Include(i => i.Contacts)
-                .Where(i => i.CreatedBy == request.User).ToListAsync();
-          
+               .ToListAsync();
+
             var vm = peoplet.Select(i => new PeopleVM
             {
 
                 Name = i.Name,
+                ReportTime = i.ReportTime,
                 PeopleID = i.PeopleID,
                 LastName = i.LastName,
                 Company = i.Company,
                 Contacts = i.Contacts.Select(k => new ContactVM
                 {
-
-
+                    Uuid = k.Uuid,
                     Phone = k.Phone,
                     Location = k.Location,
                     Email = k.Email,
@@ -71,9 +58,9 @@ namespace fakestoreapi.application.Handlers
             }).ToList();
 
             _rabitMQProducer.SendProductMessage(vm);
-
             return vm;
         }
     }
 
 }
+

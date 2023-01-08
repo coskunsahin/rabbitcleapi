@@ -20,7 +20,8 @@ namespace fakestoreapi.api.Controllers
     public class SistemController : ApiController
     {
         private readonly ICurrentUserService _currentUserService;
-      //  private readonly IRabitMQProducer _rabitMQProducer;
+
+
         private long lon;
         public SistemController(ICurrentUserService currentUserService)
         {
@@ -33,6 +34,16 @@ namespace fakestoreapi.api.Controllers
         {
             return Ok(await Mediator.Send(new GetSistemQuery { lon = lon }));
         }
+
+        [HttpGet]
+
+        
+        public async Task<IActionResult> About()
+        {
+            return Ok(await Mediator.Send(new Ping ()));
+        }
+
+
 
     }
 }

@@ -1,13 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fakestoreapi.domain.Entities
-{
-   
-    using fakestoreapi.domain.Common;
+using fakestoreapi.domain.Common;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+ using fakestoreapi.domain.Common;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -16,8 +17,14 @@ namespace fakestoreapi.domain.Entities
     using System.Text;
     using System.Threading.Tasks;
 
-    namespace Domain.Entities
-    {
+
+
+namespace fakestoreapi.domain.Entities
+{
+   
+   
+
+   
         public class People : AuditEntity
         {
            
@@ -42,4 +49,5 @@ namespace fakestoreapi.domain.Entities
             
         }
     }
+
 }

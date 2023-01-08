@@ -11,9 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fakestoreapi.application", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fakestoreapi.infrastructure", "fakestoreapi.infrastructure\fakestoreapi.infrastructure.csproj", "{5CAD0AB7-A029-4315-B90E-80FC7E7F139A}"
 EndProject
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{28D23B33-9DFB-4B5B-A914-C4167F382A90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fakestoreapi.rabidmq", "fakestoreapi.rabidmq\fakestoreapi.rabidmq.csproj", "{9CC09498-0BC5-4528-AFF8-98A170ABB157}"
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{28D23B33-9DFB-4B5B-A914-C4167F382A90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fakestoreapi.rabidmq", "fakestoreapi.rabidmq\fakestoreapi.rabidmq.csproj", "{9CC09498-0BC5-4528-AFF8-98A170ABB157}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

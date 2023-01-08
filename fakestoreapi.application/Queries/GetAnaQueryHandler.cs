@@ -10,70 +10,60 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.Design;
-
-
-using fakestoreapi.domain.Entities;
-
-
-
-
-using fakestoreapi.domain.Entities.Domain.Entities;
-
 using fakestoreapi.rabbit;
 
-namespace fakestoreapi.application.Handlers
+namespace fakestoreapi.application.Queries
 {
-    public class GetSistemQueryHandler : IRequestHandler<GetSistemQuery, IList<PeopleVM>>
+    public class GetAnaQueryHandler : IRequestHandler<GetAnaQuery, IList<PeopleVM>>
     {
+        private readonly IApplicationDbContext _context;
         private readonly IRabitMQProducer _rabitMQProducer;
 
-
-        private readonly IApplicationDbContext _context;
-
-
-        public GetSistemQueryHandler(IApplicationDbContext context, IRabitMQProducer rabitMQProducer)
+        public GetAnaQueryHandler(IApplicationDbContext context, IRabitMQProducer rabitMQProducer
+)
         {
+            _rabitMQProducer = rabitMQProducer;
+
             _context = context;
-            _rabitMQProducer= rabitMQProducer;
         }
 
-        public long lon { get;  set; }
-
-        public async Task<IList<PeopleVM>> Handle(GetSistemQuery request, CancellationToken cancellationToken)
+        public async Task<IList<PeopleVM>> Handle(GetAnaQuery request, CancellationToken cancellationToken)
         {
-            
-
             var peoplet = await _context.Peoples.Include(i => i.Contacts)
                 .Where(i => i.CreatedBy == request.User).ToListAsync();
-          
             var vm = peoplet.Select(i => new PeopleVM
             {
 
-                Name = i.Name,
                 PeopleID = i.PeopleID,
-                LastName = i.LastName,
-                Company = i.Company,
+                Name = i.Name,
+                LastName = i.Name,
+                Company = i.Name,
+
                 Contacts = i.Contacts.Select(k => new ContactVM
                 {
-
-
                     Phone = k.Phone,
                     Location = k.Location,
-                    Email = k.Email,
                     Addrees = k.Addrees,
 
+                }
 
 
+                ).OrderByDescending(k => k.Location).ToList()
 
-                }).Where(a => a.Location == request.lon).OrderByDescending(s => s.Location).ToList()
 
-            }).ToList();
+            }
+            ).ToList();
 
             _rabitMQProducer.SendProductMessage(vm);
-
             return vm;
         }
+
+
+
+
+
+
     }
 
 }
+
