@@ -1,6 +1,8 @@
 ﻿using fakestoreapi.application.ViewModels;
 using fakestoreapi.domain.Entities;
 
+using fakestoreapi.domain.Entities.Domain.Entities;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;

@@ -12,9 +12,13 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.Design;
 
+
 using fakestoreapi.domain.Entities;
 
 
+
+
+using fakestoreapi.domain.Entities.Domain.Entities;
 
 using fakestoreapi.rabbit;
 

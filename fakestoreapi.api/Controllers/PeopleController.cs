@@ -11,8 +11,9 @@ using System.Threading.Tasks;
 
 using fakestoreapi.api.Services;
 using fakestoreapi.rabbit;
-using fakestoreapi.application.Handlers;
+using fakestoreapi.application.Handler;
 using System;
+
 
 namespace fakestoreapi.api.Controllers
 {
@@ -50,6 +51,5 @@ namespace fakestoreapi.api.Controllers
             return Ok(await Mediator.Send(new DeletePeopleByIdCommand { Id = id }));
         }
 
-     
     }
 }

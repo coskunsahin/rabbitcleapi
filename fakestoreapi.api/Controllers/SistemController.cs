@@ -20,7 +20,8 @@ namespace fakestoreapi.api.Controllers
     public class SistemController : ApiController
     {
         private readonly ICurrentUserService _currentUserService;
-      
+
+
         private long lon;
         public SistemController(ICurrentUserService currentUserService)
         {
@@ -33,6 +34,7 @@ namespace fakestoreapi.api.Controllers
         {
             return Ok(await Mediator.Send(new GetSistemQuery { lon = lon }));
         }
+
         [HttpGet]
 
         
@@ -40,6 +42,7 @@ namespace fakestoreapi.api.Controllers
         {
             return Ok(await Mediator.Send(new Ping ()));
         }
+
 
 
     }

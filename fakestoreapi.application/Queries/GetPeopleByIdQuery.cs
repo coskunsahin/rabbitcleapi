@@ -2,7 +2,11 @@
 using fakestoreapi.application.Common.Interfaces;
 using fakestoreapi.domain.Entities;
 
+
 using fakestoreapi.domain.Entities;
+
+
+using fakestoreapi.domain.Entities.Domain.Entities;
 
 using MediatR;
 using System;
