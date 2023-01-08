@@ -43,7 +43,16 @@ namespace fakestoreapi.api.Controllers
             return Ok(await Mediator.Send(new Ping ()));
         }
 
+       
+        [HttpGet("GetStaticlist")]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
 
+        public async Task<IActionResult> GetStaticlist()
+        {
+            return Ok(await Mediator.Send(new GetStaticList()));
+        }
 
     }
 }
