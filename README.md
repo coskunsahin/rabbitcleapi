@@ -1,6 +1,6 @@
-# Cleanarticlera rabitmq
-k
-İhtiyac duyulan uygulama
+# Cleanarticlerarabitmq
+
+İhtiyac duyulan uygulamalar
 
 https://www.rabbitmq.com/
 https://www.erlang.org/
