@@ -15,10 +15,11 @@ namespace fakestoreapi.application.Handlers
     public class CreatePeopleCommandHandler : IRequestHandler<CreatePeopleCommand, int>
     {
         private readonly IApplicationDbContext _context;
-
-        public CreatePeopleCommandHandler(IApplicationDbContext context)
+        private readonly IRabitMQProducer _rabbitProducer;
+        public CreatePeopleCommandHandler(IApplicationDbContext context, IRabitMQProducer rabbitProducer)
         {
             _context = context;
+            _rabbitProducer = rabbitProducer;
         }
         public async Task<int> Handle(CreatePeopleCommand request, CancellationToken cancellationToken)
         {
@@ -40,6 +41,7 @@ namespace fakestoreapi.application.Handlers
                 }).ToList()
             };
             _context.Peoples.Add(entity);
+            _rabbitProducer.SendProductMessage(entity);
             await _context.SaveChangesAsync(cancellationToken);
             return entity.PeopleID;
         }
